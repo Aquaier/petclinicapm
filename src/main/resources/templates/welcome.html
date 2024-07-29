@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 
 <html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
-
+  <script src="https://your-cdn-host.com/path/to/elastic-apm-rum.umd.min.js" crossorigin></script>
+  <script>
+    elasticApm.init({
+      serviceName: 'my-service-name',
+      serverUrl: 'http://192.168.0.109:8200',
+    })
+  </script>
   <body>
 
     <h2 th:text="#{welcome}">Welcome</h2>
